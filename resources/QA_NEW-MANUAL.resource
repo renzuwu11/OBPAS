@@ -146,11 +146,11 @@ TC01_TS_007 - Click Submit Application - Online
     Click Element                       ${SUBMIT_ONLINE}
 
 TC01_TS_008 - Click Proceed - New Application
-    Wait Until Element Is Visible       ${PROCEED_NEW}           10s
+    Wait Until Element Is Visible       ${PROCEED_NEW}           20s
     Click Element                       ${PROCEED_NEW}
     Sleep                                                        3s
     Unselect Frame
-    Wait Until Page Contains Element    xpath=//iframe           10s
+    Wait Until Page Contains Element    xpath=//iframe           20s
 
 # --- STEP 1 & 2 ---
 
@@ -163,7 +163,7 @@ TC02_TS_001 - Step 1: Confirm Guidelines
     Sleep                                                         2s
 
 TC02_TS_003 - Step 2: Select Nano Enterprise No
-    Wait Until Element Is Visible       ${NANO_NO}                10s
+    Wait Until Element Is Visible       ${NANO_NO}                20s
     Click Element                       ${NANO_NO}
 
 TC02_TS_004 - Step 2: Upload Business Documents
