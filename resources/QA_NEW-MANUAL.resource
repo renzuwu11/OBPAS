@@ -447,22 +447,14 @@ Load Barangay GeoJSONs
 Get Valid Zoning Features
     [Arguments]    ${geojson}
     @{ALLOWED}=    Create List    R-1    R-2    R-3    R-1-A    R-2-A    C-1    C-2    C-3    I-1    I-2    INST    SUDZ    SHZ
-    @{FORBIDDEN}=  Create List    ROAD   WATER
-
     ${features}=    Get From Dictionary    ${geojson}    features
     ${valid}=       Create List
-
     FOR    ${f}    IN    @{features}
         ${props}=    Get From Dictionary    ${f}    properties
         ${zone}=     Get From Dictionary    ${props}    ZONE
-        ${zone}=     Convert To Upper Case    ${zone.strip()}
-        Continue For Loop If    '${zone}' in ${FORBIDDEN}
-        IF    '${zone}' in ${ALLOWED}
-            Append To List    ${valid}    ${f}
-        END
+        Run Keyword If    '${zone}' in ${ALLOWED}    Append To List    ${valid}    ${f}
     END
-
-    Should Not Be Empty    ${valid}    No valid zoning polygons found (after filtering out roads/water)
+    Should Not Be Empty    ${valid}    No valid zoning polygons found
     RETURN    ${valid}
 
 # Does the math to pick a random Latitude/Longitude coordinate inside a specific area.
