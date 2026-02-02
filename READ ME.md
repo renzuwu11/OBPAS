@@ -1,5 +1,14 @@
 **SetUp Guide**
 -
+
+**-1. Check for Python**
+-
+- Before doing anything, verify that Python is installed on your machine. Open your Terminal (or Command Prompt) and type:
+> python --version
+- If you see: Python 3.10.x (or higher), you are good to go!
+- If you see: "Command not found" or an error, download and install Python from python.org.
+- Important: During installation, make sure to check the box that says "Add Python to PATH".
+
 **0. Verification**
 -
 - Run this command to see if you already have the required libraries:
