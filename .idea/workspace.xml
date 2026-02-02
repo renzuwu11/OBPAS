@@ -1,7 +1,173 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="30d84d3e-fc5f-40fa-ba85-bcfa60ecbb8c" name="Changes" comment="" />
+    <list default="true" id="30d84d3e-fc5f-40fa-ba85-bcfa60ecbb8c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/QC_ZAU.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/READ ME.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/QA_NEW-AUTO.resource" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/QA_NEW-MANUAL.resource" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/barangay_streets.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Alicia.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Amihan.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Apolonio_Samson.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Baesa.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Bagbag.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Bagong_Lipunan_ng_Crame.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Bagong_Pagasa.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Bagong_Silangan.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Bagumbayan.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Bagumbuhay.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Bahay_Toro.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Balingasa.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Balong-bato.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Batasan_Hills.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Bayanihan.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Blue_Ridge_A.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Blue_Ridge_B.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Botocan.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Bungad.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Camp_Aguinaldo.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Capri.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Central.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Claro.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Commonwealth.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Culiat.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Damar.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Damayan.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Damayang_Lagi.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Del_Monte.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Dioquino_Zobel.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Don_Manuel.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Doña_Aurora.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Doña_Imelda.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Doña_Josefa.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Duyan-Duyan.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/E._Rodriguez.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/East_Kamias.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Escopa_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Escopa_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Escopa_3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Escopa_4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Fairview.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Greater_Lagro.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Gulod.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Holy_Spirit.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Horseshoe.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Immaculate.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Kalusugan.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Kamuning.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Katipunan.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Kaunlaran.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Kristong_Hari.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Krus_na_Ligas.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Laging_Handa.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Libis.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Lourdes.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Loyola_Heights.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Maharlika.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Malaya.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Mangga.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Manresa.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Mariana.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Mariblo.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Marilag.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Masagana.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Masambong.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Matandang_Balara.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Milagrosa.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/N._S._Amoranto_(Gintong_Silahis).json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Nagkaisang_Nayon.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Nayong_Kanluran.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/New_Era.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/North_Fairview.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Novaliches_Proper.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Obrero.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Old_Capitol_Site.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/PInagkaisahan.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Paang_Bundok.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Pagibig_sa_Nayon.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Paligsahan.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Paltok.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Pansol.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Paraiso.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Pasong_Putik.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Pasong_Tamo.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Payatas.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Phil-Am.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Pinyahan.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Project_6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/QMC.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Quirino_2-A.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Quirino_2-B.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Quirino_2-C.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Quirino_3-A.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Ramon_Magsaysay.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Roxas.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Sacred_Heart.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Salvacion.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/San_Agustin.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/San_Antonio.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/San_Bartolome.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/San_Isidro.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/San_Isidro_Labrador.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/San_Jose.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/San_Martin_de_Porres.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/San_Roque.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/San_Vicente.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Sangandaan.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Santol.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Sauyo.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Sienna.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Sikatuna_Village.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Silangan.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Socorro.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/South_Triangle.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/St._Ignatius.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/St._Peter.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Sta._Cruz.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Sta._Lucia.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Sta._Monica.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Sta._Teresita.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Sto._Cristo.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Sto._Domingo.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Sto._Niño.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Tagumpay.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Talayan.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Talipapa.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Tandang_Sora.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Tatalon.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Teachers_Village_East.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Teachers_Village_West.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/UP_Campus.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/UP_Village.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Ugong_Norte.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Unang_Sigaw.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Valencia.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Vasra.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Veterans_Village.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/Villa_Ma_Clara.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/West_Kamias.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/West_Triangle.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/json_files/White_Plains.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/new_app.resource" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/placeholders/1. Proof of Business Registration.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/placeholders/2. Contract of Lease.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/placeholders/3. Front View of business location.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/placeholders/4. Area of business activity.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/placeholders/5. left.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/placeholders/6. right.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/placeholders/8. Scanned ID of the Owner.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/QA_NEW-AUTO.robot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/QA_NEW-MANUAL.robot" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,20 +176,71 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/resources/new_app.resource" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="37UqxXPj0KN6gMG5fMSwsJT8ahD" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Robot.TC07: Summary Page.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/PycharmProjects/PythonProject1/resources/placeholders&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\PycharmProjects\PythonProject1\resources\placeholders" />
+      <recent name="C:\Users\admin\PycharmProjects\PythonProject1\resources\json_files" />
+      <recent name="C:\Users\admin\PycharmProjects\PythonProject1\resources" />
+      <recent name="C:\Users\admin\PycharmProjects\PythonProject1\scripts" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="TC07: Summary Page" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
+      <module name="QC_ZAU" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/.venv/Scripts/python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="robot.run" />
+      <option name="PARAMETERS" value="--test &quot;PythonProject1.scripts.new_app.TC07: Summary Page&quot; ." />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="true" />
+      <option name="MODULE_MODE" value="true" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Robot.TC07: Summary Page" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

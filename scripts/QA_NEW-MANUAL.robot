@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation   BOSS New Application End-to-End Workflow
-Resource        ../resources/new_app_working.resource
+Resource        ../resources/QA_NEW-MANUAL.resource
 Suite Setup     TC01_TS_001 - Open Browser To Login Page
 Suite Teardown  Close Browser
 
