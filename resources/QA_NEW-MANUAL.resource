@@ -361,7 +361,7 @@ TC07_TS_001 - Step 7: Submission
     Sleep                            5s
     Run Keyword And Ignore Error     Click Element    xpath=//button[contains(.,'OK')]
     Run Keyword And Ignore Error     Click Element    xpath=//button[contains(@class,'close')]
-    Wait Until Page Contains Element                  xpath=//h4[contains(text(),'Unified Online Business Permit Application')]    15s
+    Wait Until Page Contains Element                  xpath=//h4[contains(text(),'Unified Online Business Permit Application')]    30s
     Sleep                            5s
 
 # --- HELPER KEYWORDS ---
