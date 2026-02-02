@@ -359,6 +359,7 @@ TC07_TS_001 - Step 7: Submission
     Wait Until Element Is Visible    ${FINAL_PROCEED_BTN}    15s
     Click Element                    ${FINAL_PROCEED_BTN}
     Sleep                            5s
+    Wait Until Element Is Visible    xpath=//div[@id='modal_new_online']    10s
     Run Keyword And Ignore Error     Click Element    xpath=//button[contains(.,'OK')]
     Run Keyword And Ignore Error     Click Element    xpath=//button[contains(@class,'close')]
     Wait Until Page Contains Element                  xpath=//h4[contains(text(),'Unified Online Business Permit Application')]    30s
