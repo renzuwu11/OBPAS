@@ -146,11 +146,11 @@ TC01_TS_007 - Click Submit Application - Online
     Click Element                       ${SUBMIT_ONLINE}
 
 TC01_TS_008 - Click Proceed - New Application
-    Wait Until Element Is Visible       ${PROCEED_NEW}           20s
+    Wait Until Element Is Visible       ${PROCEED_NEW}           10s
     Click Element                       ${PROCEED_NEW}
     Sleep                                                        3s
     Unselect Frame
-    Wait Until Page Contains Element    xpath=//iframe           20s
+    Wait Until Page Contains Element    xpath=//iframe           10s
 
 # --- STEP 1 & 2 ---
 
@@ -163,7 +163,7 @@ TC02_TS_001 - Step 1: Confirm Guidelines
     Sleep                                                         2s
 
 TC02_TS_003 - Step 2: Select Nano Enterprise No
-    Wait Until Element Is Visible       ${NANO_NO}                20s
+    Wait Until Element Is Visible       ${NANO_NO}                10s
     Click Element                       ${NANO_NO}
 
 TC02_TS_004 - Step 2: Upload Business Documents
@@ -187,7 +187,7 @@ TC03_TS_001 - Step 3: Fill Business Info
     Wait Until Page Contains            Business Information and Registration        20s
     Click Element                       ${RADIO_COOPERATIVE_LABEL}
 
-    ${timestamp}=    Get Current Date   result_format=%Y-%m-%d-%H%M%S
+    ${timestamp}=   Get Current Date    result_format=%Y-%m-%d-%H%M%S
     Input Text                          ${BUS_NAME_INPUT}        BUSINESS-${timestamp}
     Click Element                       ${CHK_SAME_AS_BUS_NAME}
 
@@ -221,25 +221,32 @@ TC04_TS_001 - Step 4: Business Operations
     Load Barangay GeoJSONs
     Wait Until Page Contains         Business Operations       15s
 
-    Input Text                       ${BUSINESS_AREA}          4
-    Input Text                       ${FLOOR_AREA}             25
+    ${RAND_B_AREA}=    Evaluate    "{:.2f}".format(random.uniform(4, 50))    modules=random
+    Input Text         ${BUSINESS_AREA}          ${RAND_B_AREA}
 
-    Execute JavaScript               document.getElementById('time_operation_from').value = '06:00';
-    Execute JavaScript               document.getElementById('time_operation_to').value = '18:00';
+    ${RAND_F_AREA}=    Evaluate    "{:.2f}".format(float(${RAND_B_AREA}) + random.uniform(0, 20))    modules=random
+    Input Text         ${FLOOR_AREA}             ${RAND_F_AREA}
 
-    Wait Until Element Is Visible    ${SAME_ADDRESS}           10s
+    Execute JavaScript    var hr = Math.floor(Math.random() * (10 - 5 + 1)) + 5; var time = (hr < 10 ? '0' + hr : hr) + ':00'; document.getElementById('time_operation_from').value = time;
+    Execute JavaScript    var hr = Math.floor(Math.random() * (23 - 17 + 1)) + 17; var time = hr + ':00'; document.getElementById('time_operation_to').value = time;
+
+    Wait Until Element Is Visible    xpath=//label[@for='chk_business_add']    10s
     Execute JavaScript               document.getElementById('chk_business_add').click();
 
     Sleep                            3s
-    Wait Until Element Is Visible    ${OPEN_MAP_BTN}           10s
-    Click Element                    ${OPEN_MAP_BTN}
-    Wait Until Element Is Visible    ${MAP_LOAD_BTN}           15s
 
+    Wait Until Element Is Visible    ${OPEN_MAP_BTN}           10s
+    Execute JavaScript               document.getElementById('open_map_address_btn').scrollIntoView(true);
+    Execute JavaScript               document.getElementById('open_map_address_btn').click();
+
+    Wait Until Element Is Visible    ${MAP_LOAD_BTN}           20s
     Wait For Condition               return typeof google !== 'undefined' && typeof window.map !== 'undefined';    timeout=15s
     Sleep                            2s
 
     ${BRGY_KEY}=    Normalize Barangay Name    ${BRGY}
     ${SELECTED_BARANGAY_GEOJSON}=    Get From Dictionary    ${BARANGAY_GEOJSONS}    ${BRGY_KEY}
+
+    # Use the robust randomizer
     ${rand_lat}    ${rand_lon}=    Get Random Point In Barangay    ${SELECTED_BARANGAY_GEOJSON}
 
     ${JS_CODE}=    Catenate    SEPARATOR=
@@ -250,29 +257,37 @@ TC04_TS_001 - Step 4: Business Operations
     ...        if (window.map) {
     ...            window.map.setCenter(latLng);
     ...            window.map.setZoom(19);
+    ...
+    ...            /* 1. Clear existing markers in the Dev's system */
     ...            if (typeof deleteMarkersv2 === "function") { deleteMarkersv2(); }
-    ...            if (typeof addMarkerv2 === "function") { addMarkerv2(latLng); }
+    ...            
+    ...            /* 2. Force the Dev's function to create the marker at our point */
+    ...            if (typeof addMarkerv2 === "function") {
+    ...                addMarkerv2(latLng);
+    ...                console.log("Directly called addMarkerv2");
+    ...            }
+    ...
+    ...            /* 3. Manually trigger the 'Is this in Brgy' check just in case */
+    ...            var mObj = window.marker || (window.markersarr && window.markersarr[0]);
+    ...            if (mObj && typeof checkpointinpoly === "function") {
+    ...                checkpointinpoly(mObj);
+    ...            }
+    ...
+    ...            /* 4. Update hidden inputs for the form submit */
     ...            $("#clientlatitude").val(lat).trigger("change");
     ...            $("#clientlongitude").val(lon).trigger("change");
-    ...            var mObj = window.mapMarker || window.marker;
-    ...            if (!mObj || typeof mObj.getPosition !== "function") {
-    ...                window.mapMarker = new google.maps.Marker({position: latLng, map: window.map});
-    ...                mObj = window.mapMarker;
-    ...            }
-    ...            if (typeof checkpointinpoly === "function") { checkpointinpoly(mObj); }
-    ...            if (typeof checkpointinbrgy === "function") { checkpointinbrgy(mObj); }
     ...        }
     ...    } catch (e) { console.error("GIS Pinning Error: " + e.message); }
 
     Execute JavaScript               ${JS_CODE}
     Sleep                            3s
 
-    Scroll Element Into View         ${MAP_LOAD_BTN}
     Wait Until Element Is Enabled    ${MAP_LOAD_BTN}               10s
-    Click Element                    ${MAP_LOAD_BTN}
+    Execute JavaScript               document.getElementById('load_button').click();
 
     Wait Until Element Is Visible    ${MAP_AGREE_BTN}              10s
-    Click Element                    ${MAP_AGREE_BTN}
+    Sleep                            1s
+    Execute JavaScript               var agreeBtn = document.evaluate("${MAP_AGREE_BTN.replace('xpath=', '')}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue; agreeBtn.click();
 
     Sleep                            2s
     Scroll Element Into View         id=tct
@@ -289,8 +304,8 @@ TC04_TS_001 - Step 4: Business Operations
 
 TC05_TS_001 - Step 5: Business Activity
     Wait Until Page Contains         Business Activity    15s
-    ${TCI_VAL}=     Evaluate         random.randint(5000, 1000000)    modules=random
-    Input Text                       ${TCI_INPUT}    ${TCI_VAL}
+    ${TCI_VAL}=     Evaluate    "{:.2f}".format(random.uniform(5000, 1000000))    modules=random
+    Input Text      ${TCI_INPUT}    ${TCI_VAL}
 
     Click Element                    ${TAX_INCENTIVE_RADIO}
     Click Element                    ${BUSINESS_ACTIVITY_RADIO}
@@ -310,7 +325,7 @@ TC05_TS_001 - Step 5: Business Activity
 
     ${psic_items}=    Get WebElements    xpath=//input[contains(@class,'psic-checkbox-item') and not(ancestor::div[contains(@class,'checkbox-all')])]
     ${count}=         Get Length         ${psic_items}
-    
+
     Run Keyword If    ${count} == 0    Fail    No PSIC items available to select
     IF    ${count} == 1
         Click Element    ${psic_items}[0]
@@ -359,7 +374,7 @@ TC07_TS_001 - Step 7: Submission
     Wait Until Element Is Visible    ${FINAL_PROCEED_BTN}    15s
     Click Element                    ${FINAL_PROCEED_BTN}
     Sleep                            5s
-    Wait Until Element Is Visible    xpath=//div[@id='modal_new_online']    15s
+    Wait Until Element Is Visible    xpath=//div[@id='modal_new_online']    10s
     Run Keyword And Ignore Error     Click Element    xpath=//button[contains(.,'OK')]
     Run Keyword And Ignore Error     Click Element    xpath=//button[contains(@class,'close')]
     Wait Until Page Contains Element                  xpath=//h4[contains(text(),'Unified Online Business Permit Application')]    30s
@@ -411,7 +426,7 @@ Load Barangay Streets
             Log    Skipping malformed row: ${row}    WARN
             CONTINUE
         END
-        
+
         ${brgy_name}=      Set Variable    ${row[0]}
         ${brgy_key}=       Convert To Lower Case    ${brgy_name}
 
@@ -465,14 +480,42 @@ Get Random Point In Barangay
     ${valid_features}=    Get Valid Zoning Features    ${geojson}
     ${feature}=           Evaluate                     random.choice(${valid_features})    modules=random
     ${geometry}=          Get From Dictionary          ${feature}     geometry
-    ${coords_list}=       Get From Dictionary          ${geometry}    coordinates
-    ${polygon}=           Set Variable                 ${coords_list[0]}
-    ${min_x}=             Evaluate                     min([p[0] for p in ${polygon}])
-    ${max_x}=             Evaluate                     max([p[0] for p in ${polygon}])
-    ${min_y}=             Evaluate                     min([p[1] for p in ${polygon}])
-    ${max_y}=             Evaluate                     max([p[1] for p in ${polygon}])
-    ${width}=             Evaluate                     ${max_x} - ${min_x}
-    ${height}=            Evaluate                     ${max_y} - ${min_y}
-    ${lon}=               Evaluate                     random.uniform(${min_x} + (${width}*0.1), ${max_x} - (${width}*0.1))    modules=random
-    ${lat}=               Evaluate                     random.uniform(${min_y} + (${height}*0.1), ${max_y} - (${height}*0.1))    modules=random
+    ${polygon}=           Set Variable                 ${geometry['coordinates'][0]}
+
+    ${lons}=              Evaluate                     [p[0] for p in ${polygon}]
+    ${lats}=              Evaluate                     [p[1] for p in ${polygon}]
+    ${min_x}=             Evaluate                     min(${lons})
+    ${max_x}=             Evaluate                     max(${lons})
+    ${min_y}=             Evaluate                     min(${lats})
+    ${max_y}=             Evaluate                     max(${lats})
+
+    FOR    ${attempt}    IN RANGE     50
+        ${lon}=           Evaluate    random.uniform(${min_x}, ${max_x})    modules=random
+        ${lat}=           Evaluate    random.uniform(${min_y}, ${max_y})    modules=random
+        ${is_inside}=     Check Point In Poly    ${lat}    ${lon}    ${polygon}
+        IF    ${is_inside}
+            RETURN    ${lat}    ${lon}
+        END
+    END
     RETURN    ${lat}    ${lon}
+
+Check Point In Poly
+    [Arguments]    ${lat}    ${lon}    ${polygon}
+    ${n}=       Get Length    ${polygon}
+    ${inside}=  Set Variable  ${FALSE}
+    ${p1x}=     Set Variable  ${polygon[0][0]}
+    ${p1y}=     Set Variable  ${polygon[0][1]}
+    FOR    ${i}    IN RANGE    1    ${n} + 1
+        ${p2x}=     Set Variable  ${polygon[${i} % ${n}][0]}
+        ${p2y}=     Set Variable  ${polygon[${i} % ${n}][1]}
+        ${condition}=  Evaluate  (${lat} > min(${p1y}, ${p2y})) and (${lat} <= max(${p1y}, ${p2y})) and (${lon} <= max(${p1x}, ${p2x}))
+        IF    ${condition}
+            ${xinters}=  Evaluate  (${lat} - ${p1y}) * (${p2x} - ${p1x}) / (${p2y} - ${p1y} + 1e-10) + ${p1x}
+            IF    ${p1x} == ${p2x} or ${lon} <= ${xinters}
+                ${inside}=  Evaluate  not ${inside}
+            END
+        END
+        ${p1x}=  Set Variable  ${p2x}
+        ${p1y}=  Set Variable  ${p2y}
+    END
+    RETURN    ${inside}
